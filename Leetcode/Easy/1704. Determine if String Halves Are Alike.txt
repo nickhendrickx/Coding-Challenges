@@ -1,0 +1,14 @@
+def halvesAreAlike(self, s):
+        half = len(s) / 2
+        first = 0
+        second = 0
+
+        for i in range(half):
+            if s[i] in ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']:
+                first += 1
+
+        for i in range(half,len(s)):
+            if s[i] in ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']:
+                second += 1
+        
+        return first == second
