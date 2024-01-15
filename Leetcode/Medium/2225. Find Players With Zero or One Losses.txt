@@ -1,0 +1,16 @@
+def findWinners(self, matches):
+        losers = {}
+        for win, lose in matches:
+            losers[lose] = losers.get(lose,0) + 1
+            losers[win] = losers.get(win,0) 
+
+        winReturn = []
+        loseReturn = []
+
+        for k, v in losers.items():
+            if v == 0:
+                winReturn.append(k)
+            elif v == 1:
+                loseReturn.append(k)
+
+        return [sorted(winReturn),sorted(loseReturn)]
